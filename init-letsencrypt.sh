@@ -5,7 +5,7 @@ if ! [ -x "$(command -v docker-compose)" ]; then
   exit 1
 fi
 
-domains=(grafana1.tkturners.in grafana1.tkturners.in)
+domains=(ase.senifone.com ase.senifone.com)
 rsa_key_size=4096
 data_path="./data/certbot"
 email="" # Adding a valid address is strongly recommended
@@ -39,7 +39,6 @@ echo
 
 
 echo "### Starting nginx ..."
-docker-compose up --force-recreate -d grafana
 docker-compose up --force-recreate -d nginx
 echo
 
@@ -78,4 +77,3 @@ echo
 
 echo "### Reloading nginx ..."
 docker-compose exec nginx nginx -s reload
-docker-compose exec grafana grafana -s reload

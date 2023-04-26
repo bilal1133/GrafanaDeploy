@@ -1,8 +1,5 @@
 version: "3"
 services:
-  grafana:
-    container_name: grafana
-    image: grafana/grafana:latest-ubuntu
   nginx:
     image: nginx:latest
     container_name: nginx
